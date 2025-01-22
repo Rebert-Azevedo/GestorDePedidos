@@ -9,7 +9,7 @@ const auth = function(req, res, next){
         }
     }
 
-    res.send({ auth: "Não Autorizado!" })
+    res.status(401).send({ auth: "Não Autorizado!" })
 }
 
 // Servidor HTTP Express
