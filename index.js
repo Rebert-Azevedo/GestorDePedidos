@@ -30,8 +30,11 @@ app.post('/auth/login', async (req, res) => {
 
     if(resposta.MENSAGEM){
         res.status(200).send({
-            erro: resposta.MENSAGEM
+            message: resposta.MENSAGEM
         });
         return
     }
 });
+
+
+require('./routes/produtos');
