@@ -38,3 +38,4 @@ app.post('/auth/login', async (req, res) => {
 
 
 require('./routes/produtos');
+require('./routes/clientes');

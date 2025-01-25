@@ -25,7 +25,7 @@ app.post('/novo/produtos', async (req, res) => {
         return
     };
 
-    if(String(descricao).length > 100 || String(descricao).replace(" ","") == "" || !descricao){
+    if(String(descricao).length > 100 || String(descricao).replaceAll(" ","") == "" || !descricao){
         res.status(400).send({
             erro: "Parâmetro em formato incorreto! (descricao)"
         });
@@ -63,14 +63,14 @@ app.post('/novo/produtos', async (req, res) => {
     if(resposta.MENSAGEM){
 
         res.status(200).send({
-            message: resposta.MENSAGEM
+            mensagem: resposta.MENSAGEM
         });
         return
     };
 
     if(resposta.ID_PRODUTO){
         res.status(200).send({
-            sucesso: "Registro salvo com sucesso"
+            sucesso: "Registro salvo com sucesso!"
         });
         return
     };
